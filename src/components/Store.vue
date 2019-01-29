@@ -11,6 +11,7 @@
                 <CategoryControls/>
             </div>
             <div class="col-9 p-2">
+                <Search/>
                 <ProductList/>
             </div>
         </div>
@@ -22,11 +23,19 @@
 import ProductList from "./ProductList.vue";
 import CategoryControls from "./CategoryControls.vue";
 import CartSummary from "./CartSummary.vue";
+
+import { mapMutations } from "vuex";
+import Search from "./Search";
+
 export default {
     components:{
         ProductList,
         CategoryControls,
-        CartSummary
-    }
+        CartSummary,
+        Search
+    },
+    methods: {
+        ...mapMutations(["setShowSearch"])
+    },
 }
 </script>
