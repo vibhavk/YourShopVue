@@ -1,16 +1,16 @@
 <template>
-  <Store />
+  <router-view />
 </template>
 
 <script>
-import Store from "./components/Store.vue"
+// import Store from "./components/Store.vue"
 import {mapActions} from "vuex";
 
 export default {
   name: 'app',
-  components: {
-    Store
-  },
+  // components: {
+    // Store
+  // }, ..........................all this crap is efficiently maneged by the router-view
   methods:{
     ...mapActions(["getData"]) //calls to getData in this component will be mapped to the action
   },
