@@ -12,10 +12,14 @@ export default {
     // Store
   // }, ..........................all this crap is efficiently maneged by the router-view
   methods:{
-    ...mapActions(["getData"]) //calls to getData in this component will be mapped to the action
+    ...mapActions({
+      getData: "getData",
+      initializeCart: "cart/initializeCart"
+    }) //calls to getData in this component will be mapped to the action
   },
   created(){
     this.getData();
+    this.initializeCart(this.$store) //manual call to initialize cart data store
   }
 }
 </script>
